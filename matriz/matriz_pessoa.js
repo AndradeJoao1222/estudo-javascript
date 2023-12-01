@@ -1,5 +1,5 @@
-const person = {firstName:"John", lastName:"Doe", age:46};
-const person2 = ["Kelly", "Silva", 20];
+const person = {firstName:"John", lastName:"Doe", age:"- 46 anos"};
+const person2 = ["Kelly", "Silva", "- 20 anos"];
 
 document.getElementById("john").innerHTML = person.firstName+" "+person.lastName+" "+person.age;
 document.getElementById("kelly").innerHTML = person2[0]+" "+person2[1]+" "+person2[2];
