@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: 12pt arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Reajuste salarial</h1>
+
+    <button onclick="start()">Reajuste Salário</button>
+
+    <h2 id="sub-title"></h2>
+
+    <p id="text-1">Clique no botão acima para iniciar.</p>
+
+    <p id="text-2"></p>
+
+    <p id="text-3"></p>
+
+    <script>
+        function start() {
+
+            let name_funcionario = window.prompt('Qual é o nome do funcionário?');
+
+            let salario_before = parseFloat( window.prompt("Qual o salário de " + name_funcionario + "?"));
+
+            let  reajuste_porcentagem = parseFloat( window.prompt("O salário de " + name_funcionario + " vai ser reajustado em qual porcentagem?"));
+
+
+            document.getElementById('sub-title').innerHTML = name_funcionario + " recebeu um aumento salarial!";
+            document.getElementById('text-1').innerHTML = "O salário atual era R$ " + salario_before + ".";
+
+            let valor_reajuste = parseFloat(salario_before) / 100 * parseFloat( reajuste_porcentagem);
+
+            document.getElementById('text-2').innerHTML = "Com um aumento de " +   parseFloat ( reajuste_porcentagem) + "%, o salário vai aumentar R$ " + parseFloat (valor_reajuste) + " no próximo mês.";
+
+            let salario_last = parseFloat(salario_before) + parseFloat(valor_reajuste);
+
+            document.getElementById('text-3').innerHTML = "E a partir daí, " + name_funcionario + " vai passar a ganhar R$ " + salario_last + ".";
+        }
+    </script>
+
+
+</body>
+
+</html>
