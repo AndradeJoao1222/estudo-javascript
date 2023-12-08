@@ -46,9 +46,13 @@
 
             let valor_reajuste = parseFloat(salario_before) / 100 * parseFloat( reajuste_porcentagem);
 
+            valor_reajuste = valor_reajuste.toFixed(2);
+
+
             document.getElementById('text-2').innerHTML = "Com um aumento de " +   parseFloat ( reajuste_porcentagem) + "%, o salário vai aumentar R$ " + parseFloat (valor_reajuste) + " no próximo mês.";
 
             let salario_last = parseFloat(salario_before) + parseFloat(valor_reajuste);
+            salario_last = salario_last.toFixed(2);
 
             document.getElementById('text-3').innerHTML = "E a partir daí, " + name_funcionario + " vai passar a ganhar R$ " + salario_last + ".";
         }
